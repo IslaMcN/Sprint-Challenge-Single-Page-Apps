@@ -12,7 +12,7 @@ export default function LocationCard({ name, type, dimension, residents }) {
             </div>
             <h3>Residents</h3>
             {residents.map(resident => (
-                <div key={id} className="residents">
+                <div key={residents} className="residents">
                     {resident}
                 </div>
 

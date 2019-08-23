@@ -1,31 +1,40 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import EpisodeCard from './EpisodeCard';
 
 
 
 
-const EpisodeList = (props) => {
+const EpisodeList = () => {
     const [episode, setEpisode] = useState([])
     useEffect(() => {
-        const id= props.match.params.id;
+       
             axios
             .get('https://rickandmortyapi.com/api/episode/')
             .then(response => {
-                setEpisode(response.data);
+                setEpisode(response.data.results);
             })
             .catch(error => {
                 console.error('Episode Error', error);
             });
         
    
-    }, [props.match.params.id]);
+    }, []);
     return(
-        <section className="episode-list">
-            <h2>{episode.map(episodes => (
-                <EpisodeCard key={episodes.id} episode={episodes} />
-            ))}
-            </h2>
-        </section>
+        <div>
+            <h2>EpisodeList</h2>
+        {/* {episode.map(episode => (
+            <EpisodeCard
+
+            episode={episode}
+            name={episode.name}
+            number={episode.id}
+            airDate={episode.air_date}
+
+
+            />
+        ))} */}
+    </div>
     )
     
 }

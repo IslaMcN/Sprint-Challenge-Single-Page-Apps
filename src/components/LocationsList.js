@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import CharacterCard from './CharacterCard';
+import LocationCard from './LocationCard';
 import Route from 'react-router-dom';
 
 const LocationList = (props) => {
     const [location, setLocation] = useState()
     useEffect(() => {
-        const id = props.match.params.id;
+        
         axios
         .get('https://rickandmortyapi.com/api/location/')
         .then(response => {
@@ -17,12 +17,13 @@ const LocationList = (props) => {
         });
     
     
-    },[props.match.params.id]);
+    },[]);
         
         return(
             
             <div className="locations">
-                <CharacterCard episode={episode} />
+                <h2>Locations</h2>
+                <LocationCard location={location} />
 
             </div>
             

@@ -1,16 +1,19 @@
 import React from "react";
-import TabNav from "./components/TabNav.js";
-import Header from "./components/Header.js";
-import {BrowserRouter as Router} from 'react-router-dom';
-
+import TabNav from './components/TabNav';
+import CharacterList from './components/CharacterList'
+import Header from './components/Header';
+import LocationsList from './components/LocationsList';
+import EpisodeList from './components/episode';
 
 export default function App() {
   return (
-    <Router>
-    <main>
-      <Header />
-      <TabNav />
-    </main>
-    </Router>
+  <main>
+    <Header />
+    
+    <TabNav />
+    <CharacterList />
+     <LocationsList />
+    <EpisodeList />
+  </main>
   );
 }
