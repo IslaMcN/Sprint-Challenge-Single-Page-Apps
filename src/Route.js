@@ -8,10 +8,10 @@ import EpisodeList from './components/episode';
 export default function AppRouter() {
   return <div>
     <Switch>
-      <Route path='/characters' component={CharacterList} />
-      <Route path='/locations' component={LocationsList} />
-      <Route path='/episode' component={EpisodeList} />
-      <Route exact path='/' component={WelcomePage} />
+    <Route exact path="/Home" render={props => <WelcomePage {...props} />} />
+      <Route exact path="/CharacterList" render={props => <CharacterList {...props} />} />
+      <Route exact path="/LocationsList" render={props => <LocationsList {...props} />} />
+       <Route exact path="/EpisodeList" render={props => <EpisodeList {...props} />} />
     </Switch>
   </div>
 

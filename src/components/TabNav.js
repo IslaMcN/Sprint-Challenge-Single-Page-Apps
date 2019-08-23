@@ -8,28 +8,26 @@ import { Route, NavLink } from "react-router-dom";
 // https://react.semantic-ui.com/modules/tab/
 
 
-const Nav = props => (
-    <NavLink
-    exact
-    {...props}
-    activeClassName="active"
-    />
-);
 
-const tab = (name, text) => <div><Icon name={name}/>{text}</div>
-const welcome = tab("home", "Welcome Page")
-const character = tab("people", "Characters")
-const episode = tab("episode", "Episodes")
-const location = tab("location", "Locations")
 
-const items = [
-    {menuItem: <Menu.Item key='home' as={Nav} to={'/'} content={welcome} />},
-    {menuItem: <Menu.Item key='people' as={Nav} to={'/characters'} content={character} />},
-    {menuItem: <Menu.Item key='episode' as={Nav} to={'/episode'} content={episode} />},
-    {menuItem: <Menu.Item key='location' as={Nav} to={'/locations'} content={location} />},
-]
-
-const TabNav=() => <Tab items={items} renderActiveOnly={false}/>
+const TabNav=() => {
+    return(
+        <div>
+            <NavLink to="/Home">
+                Home
+            </NavLink>
+            <NavLink to="/CharacterList">
+                Characters
+            </NavLink>
+            <NavLink to="/LocationsList">
+                Locations
+            </NavLink>
+            <NavLink to="/EpisodeList">
+                Episodes
+            </NavLink>
+        </div>
+    )
+}
 
 
 export default TabNav;
