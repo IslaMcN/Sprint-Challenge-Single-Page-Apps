@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import EpisodeCard from './EpisodeCard';
+import {Card} from 'semantic-ui-react';
 
 
 
 
-const EpisodeList = () => {
+const EpisodeList = (props) => {
     const [episode, setEpisode] = useState([])
     useEffect(() => {
        
@@ -21,20 +22,20 @@ const EpisodeList = () => {
    
     }, []);
     return(
-        <div>
-            <h2>EpisodeList</h2>
-        {/* {episode.map(episode => (
-            <EpisodeCard
+        <Card>
+            <h4>EpisodeList</h4>
+            {/* {episode.map(episode => (
+                <EpisodeCard
 
-            episode={episode}
-            name={episode.name}
-            number={episode.id}
-            airDate={episode.air_date}
-
-
-            />
-        ))} */}
-    </div>
+                episode={episode}
+                name={episode.name}
+                number={episode.id}
+                airDate={episode.air_date}
+                
+                
+                />
+            ))} */}
+        </Card>
     )
     
 }

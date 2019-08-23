@@ -23,7 +23,7 @@ const LocationList = (props) => {
             
             <div className="locations">
                 <h2>Locations</h2>
-                <LocationCard location={location} />
+                {/* <LocationCard location={location} /> */}
 
             </div>
             

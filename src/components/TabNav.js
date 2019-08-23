@@ -1,10 +1,7 @@
 import React from "react";
 import { Tab, Menu, Icon } from "semantic-ui-react";
 import { Route, NavLink } from "react-router-dom";
-import WelcomePage from './WelcomePage';
-import CharacterList from './CharacterList';
-import LocationList from './LocationsList';
-import EpisodeList from './episode';
+
 
 // TODO: Add missing tabs below
 // Take a look at React Semantic UI tabs 
@@ -32,13 +29,7 @@ const items = [
     {menuItem: <Menu.Item key='location' as={Nav} to={'/locations'} content={location} />},
 ]
 
-export default function TabNav() {
-    return(
-    <Tab items={items}>
-        <Route exact path="/" component={WelcomePage} />
-        <Route path="/CharacterList" component={CharacterList} />
-        <Route path="/LocationList" component={LocationList} />
-        <Route path="/episode" component={EpisodeList} />
-    </Tab>
-)
-};
+const TabNav=() => <Tab items={items} renderActiveOnly={false}/>
+
+
+export default TabNav;
