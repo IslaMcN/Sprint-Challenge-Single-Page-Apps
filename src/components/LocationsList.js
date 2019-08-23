@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import LocationCard from './LocationCard';
-import Route from 'react-router-dom';
 
-const LocationList = (props) => {
-    const [location, setLocation] = useState()
+
+export default function LocationList(props) {
+    // TODO: Add useState to track data from useEffect
+    const [location, setLocation] = useState([])
     useEffect(() => {
-        
-        axios
-        .get('https://rickandmortyapi.com/api/location/')
-        .then(response => {
-            setLocation(response.data);
-        })
-        .catch(error => {
-            console.error('Location error', error);
-        });
-    
-    
-    },[]);
-        
-        return(
-            
-            <div className="locations">
-                <h2>Locations</h2>
-                {/* <LocationCard location={location} /> */}
-
-            </div>
-            
-        )
-}
-
-
-
-export default LocationList;
+      // TODO: Add API Request here - must run in `useEffect`
+      //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+      
+          
+      axios
+      .get('https://rickandmortyapi.com/api/location/')
+      .then(response => {
+          setLocation(response.data.results);
+      })
+      .catch(error => {
+          console.error('Server Error', error);
+      });
+  
+    }, []);
+  
+    return(
+      <section className="location-list grid-view">
+        {location.map(character => (
+          <LocationCard key={character.id} character={character} />
+        ))}
+      </section>
+    );
+  }
+  

@@ -22,20 +22,11 @@ const EpisodeList = (props) => {
    
     }, []);
     return(
-        <Card>
-            <h4>EpisodeList</h4>
-            {/* {episode.map(episode => (
-                <EpisodeCard
-
-                episode={episode}
-                name={episode.name}
-                number={episode.id}
-                airDate={episode.air_date}
-                
-                
-                />
-            ))} */}
-        </Card>
+        <section className="character-list grid-view">
+      {episode.map(character => (
+        <EpisodeCard key={character.id} character={character} />
+      ))}
+    </section>
     )
     
 }
